@@ -3,10 +3,12 @@ package com.codepath.bestsellerlistapp;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.codepath.bestsellerlistapp.models.BestSellerBook;
 
 import java.util.List;
@@ -35,8 +37,16 @@ public class BestSellerBooksRecyclerViewAdapter extends RecyclerView.Adapter<Bes
     @Override
     public void onBindViewHolder(final BookViewHolder holder, int position) {
         holder.mItem = books.get(position);
+        String ranking = String.format("%d", books.get(position).rank);
+        holder.rank.setText(ranking);
         holder.mBookTitle.setText(books.get(position).title);
+        holder.mBookDescription.setText(books.get(position).description);
         holder.mBookAuthor.setText(books.get(position).author);
+
+        Glide.with(holder.mView)
+                .load(books.get(position).bookImageUrl)
+                .centerInside()
+                .into(holder.bookImage);
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,15 +67,22 @@ public class BestSellerBooksRecyclerViewAdapter extends RecyclerView.Adapter<Bes
 
     public class BookViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
+        public final TextView rank;
         public final TextView mBookTitle;
+        public final TextView mBookDescription;
         public final TextView mBookAuthor;
+        public final ImageView bookImage;
         public BestSellerBook mItem;
 
         public BookViewHolder(View view) {
             super(view);
             mView = view;
+            rank = (TextView) view.findViewById(R.id.ranking);
             mBookTitle = (TextView) view.findViewById(R.id.book_title);
+            mBookDescription = (TextView) view.findViewById(R.id.book_description);
             mBookAuthor = (TextView) view.findViewById(R.id.book_author);
+            bookImage = (ImageView) view.findViewById(R.id.book_image);
+
         }
 
         @Override
