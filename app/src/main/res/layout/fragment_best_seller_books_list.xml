@@ -14,7 +14,8 @@
         android:layout_marginRight="16dp"
         app:layoutManager="LinearLayoutManager"
         tools:context=".BestSellerBooksFragment"
-        tools:listitem="@layout/fragment_best_seller_book" />
+        tools:listitem="@layout/layout_bookitem_cardview" />
+<!--        tools:listitem="@layout/fragment_best_seller_book" />-->
 
     <androidx.core.widget.ContentLoadingProgressBar
         android:id="@+id/progress"

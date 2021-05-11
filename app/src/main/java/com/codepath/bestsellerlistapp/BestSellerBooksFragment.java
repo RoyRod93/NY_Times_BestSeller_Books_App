@@ -2,18 +2,16 @@ package com.codepath.bestsellerlistapp;
 
 import android.content.Context;
 import android.os.Bundle;
-
-import androidx.core.widget.ContentLoadingProgressBar;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
+import androidx.core.widget.ContentLoadingProgressBar;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.codepath.bestsellerlistapp.models.BestSellerBook;
 import com.codepath.bestsellerlistapp.networking.CallbackResponse;
@@ -49,7 +47,8 @@ public class BestSellerBooksFragment extends Fragment implements OnListFragmentI
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.list);
 
         Context context = view.getContext();
-        recyclerView.setLayoutManager(new GridLayoutManager(context, 2));
+        //recyclerView.setLayoutManager(new GridLayoutManager(context, 2));
+        recyclerView.setLayoutManager(new LinearLayoutManager(context));
         updateAdapter(progressBar, recyclerView);
         return view;
     }

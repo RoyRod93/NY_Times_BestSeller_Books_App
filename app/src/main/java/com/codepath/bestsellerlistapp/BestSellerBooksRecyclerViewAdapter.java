@@ -30,7 +30,9 @@ public class BestSellerBooksRecyclerViewAdapter extends RecyclerView.Adapter<Bes
     @Override
     public BookViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_best_seller_book, parent, false);
+                .inflate(R.layout.layout_bookitem_cardview, parent, false);
+//                .inflate(R.layout.fragment_best_seller_book, parent, false);
+
         return new BookViewHolder(view);
     }
 
