@@ -3,19 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#ff9da1">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list"
         android:name="com.codepath.bestsellerlistapp.BestSellerBooksFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_margin="5dp"
         app:layoutManager="LinearLayoutManager"
         tools:context=".BestSellerBooksFragment"
         tools:listitem="@layout/layout_bookitem_cardview" />
-<!--        tools:listitem="@layout/fragment_best_seller_book" />-->
+    <!--        tools:listitem="@layout/fragment_best_seller_book" />-->
 
     <androidx.core.widget.ContentLoadingProgressBar
         android:id="@+id/progress"
